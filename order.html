@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สั่งซื้อของที่ระลึก 30 ปี</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            green: {
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+            },
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+  <!-- เนื้อหา -->
+  <div class="flex-grow">
+    <div class="max-w-4xl mx-auto p-8 bg-white mt-10 rounded-xl shadow-md">
+      <h1 class="text-3xl font-bold text-green-700 mb-6 text-center">แบบฟอร์มสั่งซื้อของที่ระลึก 30 ปี</h1>
+      <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <!--ชื่อ-นามสกุล-->
+        <div>
+          <label class="block font-medium text-gray-700">ชื่อ - นามสกุล</label>
+          <input type="text" name="fullname" required class="w-full p-2 border border-gray-300 rounded" placeholder="เช่น ติณณภพ พวงมาลา">
+        </div>
+        <!--ที่อยู่-->
+        <div>
+          <label class="block font-medium text-gray-700">ที่อยู่</label>
+          <textarea name="address" rows="3" required class="w-full p-2 border border-gray-300 rounded" placeholder="กรอกที่อยู่สำหรับจัดส่ง..."></textarea>
+        </div>
+        <!--เบอร์โทร-->
+        <div>
+          <label class="block font-medium text-gray-700">เบอร์โทร</label>
+          <input type="tel" name="phone" required class="w-full p-2 border border-gray-300 rounded" placeholder="เช่น 08xxxxxxx">
+        </div>
+        <!--เลือกรายการสินค้า-->
+        <div>
+          <label class="block font-medium text-gray-700">เลือกรายการสินค้า</label>
+          <select name="product" required class="w-full p-2 border border-gray-300 rounded">
+            <option value="">-- เลือกสินค้า --</option>
+            <option value="เสื้อ">เสื้อ (ระบุสี/ขนาดด้านล่าง)</option>
+            <option value="กระเป๋า">กระเป๋า</option>
+            <option value="แก้ว">แก้ว</option>
+            <option value="หมวก">หมวก</option>
+            <option value="ร่ม">ร่ม</option>
+            <option value="เข็มกลัด">เข็มกลัด</option>
+            <option value="สมุด">สมุด</option>
+            <option value="ปากกา">ปากกา</option>
+          </select>
+        </div>
+        <!--รายละเอียดเพิ่มเติมของสินค้า-->
+        <div>
+          <label class="block font-medium text-gray-700">รายละเอียดเพิ่มเติม (เช่น สี, ขนาด)</label>
+          <input type="text" name="product_detail" class="w-full p-2 border border-gray-300 rounded" placeholder="เช่น เสื้อ ไซส์ M สีขาว 1 ตัว">
+        </div>
+        <!--วันที่ซื้อ-->
+        <div>
+          <label class="block font-medium text-gray-700">วันที่ซื้อ</label>
+          <input type="date" name="purchase_date" required class="w-full p-2 border border-gray-300 rounded">
+        </div>
+        <!--แนบสลิป-->
+        <div>
+          <label class="block font-medium text-gray-700">แนบรูปสลิปการชำระเงิน</label>
+          <input type="file" name="slip" accept="image/*" required class="w-full">
+        </div>
+        <!-- ช่องทางจัดส่ง -->
+        <div>
+          <label class="block font-medium text-gray-700">ช่องทางรับสินค้า</label>
+          <div class="flex space-x-4 mt-2">
+            <label class="inline-flex items-center">
+              <input type="radio" name="delivery" value="รับเอง" class="mr-2"> รับเองที่คณะ
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="delivery" value="จัดส่ง" class="mr-2"> จัดส่งถึงบ้าน
+            </label>
+          </div>
+        </div>
+        <!--ช่องทางชำระเงิน-->
+        <div>
+          <label class="block font-medium text-gray-700">ช่องทางชำระเงิน</label>
+          <select name="payment" required class="w-full p-2 border border-gray-300 rounded">
+            <option value="">-- เลือกช่องทาง --</option>
+            <option value="โอนผ่านบัญชีธนาคาร">โอนผ่านบัญชีธนาคาร</option>
+            <option value="พร้อมเพย์">พร้อมเพย์</option>
+            <option value="เงินสด">เงินสด (เฉพาะรับเอง)</option>
+          </select>
+        </div>
+        <!--ปุ่มส่ง-->
+        <div class="text-center">
+          <button type="submit" class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-6 rounded">
+            ส่งคำสั่งซื้อ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-10">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm font-medium">มหาวิทยาลัยแม่โจ้</p>
+      <p class="text-xs mt-1">© 2025 Maejo University. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
