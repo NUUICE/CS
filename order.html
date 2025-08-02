@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>สั่งซื้อของที่ระลึก 30 ปี</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>รายการสินค้า - ที่ระลึก 30 ปี</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,88 +22,115 @@
     };
   </script>
 </head>
-<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
-  <!-- เนื้อหา -->
+<body class="bg-gray-50 font-sans flex flex-col min-h-screen">
   <div class="flex-grow">
-    <div class="max-w-4xl mx-auto p-8 bg-white mt-10 rounded-xl shadow-md">
-      <h1 class="text-3xl font-bold text-green-700 mb-6 text-center">แบบฟอร์มสั่งซื้อของที่ระลึก 30 ปี</h1>
-      <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6">
-        <!--ชื่อ-นามสกุล-->
-        <div>
-          <label class="block font-medium text-gray-700">ชื่อ - นามสกุล</label>
-          <input type="text" name="fullname" required class="w-full p-2 border border-gray-300 rounded" placeholder="เช่น ติณณภพ พวงมาลา">
+    <div class="max-w-6xl mx-auto p-6 mt-10 bg-white shadow-xl rounded-xl">
+
+      <!-- ส่วนหัวของตาราง -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold text-green-700">รายการสินค้าในสต็อก</h1>
+        <div class="flex space-x-2">
+          <a href="index.html" class="bg-green-600 hover:bg-green-800 text-white font-semibold px-4 py-2 rounded">
+            + เพิ่มสินค้าใหม่
+          </a>
+          <!-- ✅ ปุ่มตัวอย่างการสั่งซื้อ -->
+          <a href="order.html" class="bg-green-500 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded">
+            ตัวอย่างการสั่งซื้อ
+          </a>
         </div>
-        <!--ที่อยู่-->
-        <div>
-          <label class="block font-medium text-gray-700">ที่อยู่</label>
-          <textarea name="address" rows="3" required class="w-full p-2 border border-gray-300 rounded" placeholder="กรอกที่อยู่สำหรับจัดส่ง..."></textarea>
-        </div>
-        <!--เบอร์โทร-->
-        <div>
-          <label class="block font-medium text-gray-700">เบอร์โทร</label>
-          <input type="tel" name="phone" required class="w-full p-2 border border-gray-300 rounded" placeholder="เช่น 08xxxxxxx">
-        </div>
-        <!--เลือกรายการสินค้า-->
-        <div>
-          <label class="block font-medium text-gray-700">เลือกรายการสินค้า</label>
-          <select name="product" required class="w-full p-2 border border-gray-300 rounded">
-            <option value="">-- เลือกสินค้า --</option>
-            <option value="เสื้อ">เสื้อ (ระบุสี/ขนาดด้านล่าง)</option>
-            <option value="กระเป๋า">กระเป๋า</option>
-            <option value="แก้ว">แก้ว</option>
-            <option value="หมวก">หมวก</option>
-            <option value="ร่ม">ร่ม</option>
-            <option value="เข็มกลัด">เข็มกลัด</option>
-            <option value="สมุด">สมุด</option>
-            <option value="ปากกา">ปากกา</option>
-          </select>
-        </div>
-        <!--รายละเอียดเพิ่มเติมของสินค้า-->
-        <div>
-          <label class="block font-medium text-gray-700">รายละเอียดเพิ่มเติม (เช่น สี, ขนาด)</label>
-          <input type="text" name="product_detail" class="w-full p-2 border border-gray-300 rounded" placeholder="เช่น เสื้อ ไซส์ M สีขาว 1 ตัว">
-        </div>
-        <!--วันที่ซื้อ-->
-        <div>
-          <label class="block font-medium text-gray-700">วันที่ซื้อ</label>
-          <input type="date" name="purchase_date" required class="w-full p-2 border border-gray-300 rounded">
-        </div>
-        <!--แนบสลิป-->
-        <div>
-          <label class="block font-medium text-gray-700">แนบรูปสลิปการชำระเงิน</label>
-          <input type="file" name="slip" accept="image/*" required class="w-full">
-        </div>
-        <!-- ช่องทางจัดส่ง -->
-        <div>
-          <label class="block font-medium text-gray-700">ช่องทางรับสินค้า</label>
-          <div class="flex space-x-4 mt-2">
-            <label class="inline-flex items-center">
-              <input type="radio" name="delivery" value="รับเอง" class="mr-2"> รับเองที่คณะ
-            </label>
-            <label class="inline-flex items-center">
-              <input type="radio" name="delivery" value="จัดส่ง" class="mr-2"> จัดส่งถึงบ้าน
-            </label>
-          </div>
-        </div>
-        <!--ช่องทางชำระเงิน-->
-        <div>
-          <label class="block font-medium text-gray-700">ช่องทางชำระเงิน</label>
-          <select name="payment" required class="w-full p-2 border border-gray-300 rounded">
-            <option value="">-- เลือกช่องทาง --</option>
-            <option value="โอนผ่านบัญชีธนาคาร">โอนผ่านบัญชีธนาคาร</option>
-            <option value="พร้อมเพย์">พร้อมเพย์</option>
-            <option value="เงินสด">เงินสด (เฉพาะรับเอง)</option>
-          </select>
-        </div>
-        <!--ปุ่มส่ง-->
-        <div class="text-center">
-          <button type="submit" class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-6 rounded">
-            ส่งคำสั่งซื้อ
-          </button>
-        </div>
-      </form>
+      </div>
+
+      <!-- ตารางสินค้า -->
+      <div class="overflow-x-auto">
+        <table class="min-w-full border bg-white rounded-xl shadow">
+          <thead class="bg-green-100 text-green-800">
+            <tr>
+              <th class="p-3 text-left">รูปภาพ</th>
+              <th class="p-3 text-left">ชื่อสินค้า</th>
+              <th class="p-3 text-left">ประเภท</th>
+              <th class="p-3 text-left">สี</th>
+              <th class="p-3 text-left">ขนาด</th>
+              <th class="p-3 text-left">ราคา</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60" class="rounded" /></td>
+              <td class="p-3">เสื้อยืด 30 ปี</td>
+              <td class="p-3">เสื้อ</td>
+              <td class="p-3">น้ำเงิน</td>
+              <td class="p-3">M</td>
+              <td class="p-3">250 บาท</td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60?text=Bag" class="rounded" /></td>
+              <td class="p-3">กระเป๋าผ้าโลโก้ 30 ปี</td>
+              <td class="p-3">กระเป๋า</td>
+              <td class="p-3">ขาว</td>
+              <td class="p-3">ขนาดฟรี</td>
+              <td class="p-3">150 บาท</td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60?text=Mug" class="rounded" /></td>
+              <td class="p-3">แก้วมัคครบรอบ</td>
+              <td class="p-3">แก้ว</td>
+              <td class="p-3">ขาว</td>
+              <td class="p-3">350 ml</td>
+              <td class="p-3">120 บาท</td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60?text=Hat" class="rounded" /></td>
+              <td class="p-3">หมวกแก๊ป 30 ปี</td>
+              <td class="p-3">หมวก</td>
+              <td class="p-3">ดำ</td>
+              <td class="p-3">ฟรีไซส์</td>
+              <td class="p-3">100 บาท</td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60?text=Umbrella" class="rounded" /></td>
+              <td class="p-3">ร่มพับลายครบรอบ</td>
+              <td class="p-3">ร่ม</td>
+              <td class="p-3">น้ำเงิน</td>
+              <td class="p-3">21 นิ้ว</td>
+              <td class="p-3">180 บาท</td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60?text=Pin" class="rounded" /></td>
+              <td class="p-3">เข็มกลัดที่ระลึก</td>
+              <td class="p-3">เข็มกลัด</td>
+              <td class="p-3">หลากสี</td>
+              <td class="p-3">3 ซม.</td>
+              <td class="p-3">30 บาท</td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60?text=Notebook" class="rounded" /></td>
+              <td class="p-3">สมุดโน้ตปกแข็ง</td>
+              <td class="p-3">สมุด</td>
+              <td class="p-3">ฟ้า</td>
+              <td class="p-3">A5</td>
+              <td class="p-3">60 บาท</td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-3"><img src="https://via.placeholder.com/60?text=Pen" class="rounded" /></td>
+              <td class="p-3">ปากกาหมึกน้ำเงิน</td>
+              <td class="p-3">ปากกา</td>
+              <td class="p-3">น้ำเงิน</td>
+              <td class="p-3">ขนาดมาตรฐาน</td>
+              <td class="p-3">20 บาท</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
+
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-6 mt-10">
     <div class="max-w-4xl mx-auto px-4 text-center">
@@ -111,5 +138,8 @@
       <p class="text-xs mt-1">© 2025 Maejo University. All rights reserved.</p>
     </div>
   </footer>
+</body>
+</html>
+
 </body>
 </html>
