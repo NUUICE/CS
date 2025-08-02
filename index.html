@@ -3,108 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>รายการสินค้า - ที่ระลึก 30 ปี</title>
+  <title>เพิ่มสินค้า - ที่ระลึก 30 ปี</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-sans">
-  <div class="max-w-6xl mx-auto p-6 mt-10">
-    <h1 class="text-3xl font-bold text-blue-800 mb-6">รายการสินค้าในสต็อก</h1>
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-4xl mx-auto p-6 bg-white shadow-xl mt-10 rounded-xl">
+    <h1 class="text-3xl font-bold text-blue-800 mb-4">เพิ่มสินค้า (Admin)</h1>
+    <form action="stock.html" method="GET" class="space-y-6">
 
-    <div class="overflow-x-auto">
-      <table class="min-w-full border bg-white rounded-xl shadow">
-        <thead class="bg-blue-100 text-blue-800">
-          <tr>
-            <th class="p-3 text-left">รูปภาพ</th>
-            <th class="p-3 text-left">ชื่อสินค้า</th>
-            <th class="p-3 text-left">ประเภท</th>
-            <th class="p-3 text-left">สี</th>
-            <th class="p-3 text-left">ขนาด</th>
-            <th class="p-3 text-left">ราคา</th>
-          </tr>
-        </thead>
-        <tbody class="text-gray-700">
-          <!--เสื้อ-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60" class="rounded" /></td>
-            <td class="p-3">เสื้อยืด 30 ปี</td>
-            <td class="p-3">เสื้อ</td>
-            <td class="p-3">น้ำเงิน</td>
-            <td class="p-3">M</td>
-            <td class="p-3">250 บาท</td>
-          </tr>
+      <!-- เลือกประเภทสินค้า -->
+      <div>
+        <label class="block text-gray-700 font-medium">ประเภทสินค้า</label>
+        <select name="type" class="w-full p-2 border border-gray-300 rounded">
+          <option value="shirt">เสื้อ</option>
+          <option value="bag">กระเป๋า</option>
+          <option value="mug">แก้ว</option>
+          <option value="hat">หมวก</option>
+          <option value="umbrella">ร่ม</option>
+          <option value="pin">เข็มกลัด</option>
+          <option value="notebook">สมุด</option>
+          <option value="pen">ปากกา</option>
+        </select>
+      </div>
 
-          <!--กระเป๋า-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60?text=Bag" class="rounded" /></td>
-            <td class="p-3">กระเป๋าผ้าโลโก้ 30 ปี</td>
-            <td class="p-3">กระเป๋า</td>
-            <td class="p-3">ขาว</td>
-            <td class="p-3">ขนาดฟรี</td>
-            <td class="p-3">150 บาท</td>
-          </tr>
+      <!-- รายละเอียดสินค้า -->
+      <div>
+        <label class="block text-gray-700 font-medium">ชื่อสินค้า</label>
+        <input type="text" name="name" placeholder="เช่น เสื้อยืด 30 ปี" required
+          class="w-full p-2 border border-gray-300 rounded" />
+      </div>
 
-          <!--แก้ว-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60?text=Mug" class="rounded" /></td>
-            <td class="p-3">แก้วมัคครบรอบ</td>
-            <td class="p-3">แก้ว</td>
-            <td class="p-3">ขาว</td>
-            <td class="p-3">350 ml</td>
-            <td class="p-3">120 บาท</td>
-          </tr>
+      <!-- สี -->
+      <div>
+        <label class="block text-gray-700 font-medium">สี</label>
+        <input type="text" name="color" placeholder="เช่น น้ำเงิน / ขาว" class="w-full p-2 border border-gray-300 rounded" />
+      </div>
 
-          <!--หมวก-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60?text=Hat" class="rounded" /></td>
-            <td class="p-3">หมวกแก๊ป 30 ปี</td>
-            <td class="p-3">หมวก</td>
-            <td class="p-3">ดำ</td>
-            <td class="p-3">ฟรีไซส์</td>
-            <td class="p-3">100 บาท</td>
-          </tr>
+      <!-- ขนาด -->
+      <div>
+        <label class="block text-gray-700 font-medium">ขนาด</label>
+        <input type="text" name="size" placeholder="เช่น S, M, L, XL" class="w-full p-2 border border-gray-300 rounded" />
+      </div>
 
-          <!--ร่ม-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60?text=Umbrella" class="rounded" /></td>
-            <td class="p-3">ร่มพับลายครบรอบ</td>
-            <td class="p-3">ร่ม</td>
-            <td class="p-3">น้ำเงิน</td>
-            <td class="p-3">21 นิ้ว</td>
-            <td class="p-3">180 บาท</td>
-          </tr>
+      <!-- ราคา -->
+      <div>
+        <label class="block text-gray-700 font-medium">ราคา (บาท)</label>
+        <input type="number" name="price" placeholder="เช่น 250" required class="w-full p-2 border border-gray-300 rounded" />
+      </div>
 
-          <!--เข็มกลัด-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60?text=Pin" class="rounded" /></td>
-            <td class="p-3">เข็มกลัดที่ระลึก</td>
-            <td class="p-3">เข็มกลัด</td>
-            <td class="p-3">หลากสี</td>
-            <td class="p-3">3 ซม.</td>
-            <td class="p-3">30 บาท</td>
-          </tr>
+      <!-- อัปโหลดรูป -->
+      <div>
+        <label class="block text-gray-700 font-medium">อัปโหลดรูปภาพสินค้า</label>
+        <input type="file" name="image" class="w-full" />
+      </div>
 
-          <!--สมุด-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60?text=Notebook" class="rounded" /></td>
-            <td class="p-3">สมุดโน้ตปกแข็ง</td>
-            <td class="p-3">สมุด</td>
-            <td class="p-3">ฟ้า</td>
-            <td class="p-3">A5</td>
-            <td class="p-3">60 บาท</td>
-          </tr>
-
-          <!--ปากกา-->
-          <tr class="border-t">
-            <td class="p-3"><img src="https://via.placeholder.com/60?text=Pen" class="rounded" /></td>
-            <td class="p-3">ปากกาหมึกน้ำเงิน</td>
-            <td class="p-3">ปากกา</td>
-            <td class="p-3">น้ำเงิน</td>
-            <td class="p-3">ขนาดมาตรฐาน</td>
-            <td class="p-3">20 บาท</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <button type="submit"
+        class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded">บันทึกสินค้า</button>
+    </form>
   </div>
 </body>
 </html>
