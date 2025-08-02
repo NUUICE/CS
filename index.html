@@ -4,6 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>เพิ่มสินค้า - ที่ระลึก 30 ปี</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            green: {
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
@@ -21,6 +39,7 @@
         </a>
       </div>
 
+      <!-- ฟอร์มเพิ่มสินค้า -->
       <form action="stock.html" method="GET" class="space-y-6">
 
         <!-- ประเภทสินค้า -->
@@ -38,7 +57,7 @@
           </select>
         </div>
 
-        <!-- รายละเอียด -->
+        <!-- รายละเอียดสินค้า -->
         <div>
           <label class="block text-gray-700 font-medium">ชื่อสินค้า</label>
           <input type="text" name="name" placeholder="เช่น เสื้อยืด 30 ปี" required
@@ -47,17 +66,20 @@
 
         <div>
           <label class="block text-gray-700 font-medium">สี</label>
-          <input type="text" name="color" placeholder="เช่น น้ำเงิน / ขาว" class="w-full p-2 border border-gray-300 rounded" />
+          <input type="text" name="color" placeholder="เช่น น้ำเงิน / ขาว" 
+            class="w-full p-2 border border-gray-300 rounded" />
         </div>
 
         <div>
           <label class="block text-gray-700 font-medium">ขนาด</label>
-          <input type="text" name="size" placeholder="เช่น S, M, L, XL" class="w-full p-2 border border-gray-300 rounded" />
+          <input type="text" name="size" placeholder="เช่น S, M, L, XL" 
+            class="w-full p-2 border border-gray-300 rounded" />
         </div>
 
         <div>
           <label class="block text-gray-700 font-medium">ราคา (บาท)</label>
-          <input type="number" name="price" placeholder="เช่น 250" required class="w-full p-2 border border-gray-300 rounded" />
+          <input type="number" name="price" placeholder="เช่น 250" required 
+            class="w-full p-2 border border-gray-300 rounded" />
         </div>
 
         <div>
@@ -83,21 +105,3 @@
 
 </body>
 </html>
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          green: {
-            500: '#22c55e',
-            600: '#16a34a',
-            700: '#15803d',
-            800: '#166534',
-          },
-        },
-      },
-    },
-  };
-</script>
-
